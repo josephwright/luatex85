@@ -18,3 +18,8 @@ formats.
 
 The various `<name>-test.tex` files are LaTeX demos to check that
 the code here works.
+
+Note that `ltluatex.lua` here is also available in the development
+version of LaTeX2e (http://latex-project.org/svnroot/latex2e-public/trunk/),
+and is included here as very few users will have the development code
+available.
