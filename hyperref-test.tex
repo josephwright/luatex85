@@ -1,0 +1,25 @@
+\RequirePackage{luatex85}
+\documentclass{article}
+\usepackage{hyperref}
+
+
+
+\begin{document}
+
+\tableofcontents
+
+
+\newpage
+\section{aa\label{seca}}
+
+\begin{figure}
+fff
+\caption{ffff\label{figa}}
+\end{figure}
+
+\newpage
+\section{bb\label{secb}}
+bbb \ref{seca} and \ref{figa}.
+
+
+\end{document}
