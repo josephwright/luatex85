@@ -1,0 +1,73 @@
+\RequirePackage{luatex85}
+% not actually bad here
+\begin{filecontents}{\jobname.spell.bad}
+typesetting
+manuscript
+computer
+\end{filecontents}
+
+\ifx\luaescapestring\undefined
+\let\luaescapestring\luatexluaescapestring
+\fi
+
+\documentclass{article}
+
+% four packages using luatexbase/luaotfload
+\usepackage{polyglossia}
+\setmainlanguage{english}\setotherlanguages{french,tibetan}
+\newfontfamily\tibetanfont{Microsoft Himalaya}% or any other suitable font
+\usepackage{spelling}
+\usepackage{chickenize}\boustrophedon
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+
+
+\begin{document}
+
+% `Start of the TeXBook
+\noindent
+{\sc Gentle} {\sc Reader}: \strut This is a handbook about
+\TeX, a new typesetting system intended for the creation
+of beautiful books---and especially for books that contain a lot of
+mathematics. By preparing a manuscript in \TeX\ format, you will be
+telling a computer exactly how the manuscript is to be transformed into
+pages whose typographic quality is comparable to that of the world's
+finest printers; yet you won't need to do much more work than would be
+involved if you were simply typing the manuscript on an ordinary
+typewriter. In fact, your total work will probably be significantly less,
+if you consider the time it ordinarily takes to revise a typewritten manuscript,
+since computer text files are so easy to change and to reprocess. \
+(If such claims sound too good to be true, keep in mind that they were made
+by \TeX's designer, on a day when \TeX\ happened to
+be working, so the statements may be biased; but read on anyway.)
+
+\unboustrophedon
+
+\chickenize
+one two three four five six seven eight nine ten
+
+\unchickenize
+
+\randomcolor
+Some random text in random colours.
+
+\unrandomcolor
+
+\uppercasecolor
+Some Text with Mixed Case LaTeX Input.
+
+\unuppercasecolor
+
+\paragraph{French} should get extra space:
+
+foo: bar; foobar!
+
+\begin{french}foo: bar; foobar!\end{french}
+
+\paragraph{Tibetan}should break at tshegs
+
+\begin{tibetan}\raggedright
+འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་འངངས་
+
+\end{tibetan}
+\end{document}
