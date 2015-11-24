@@ -257,13 +257,3 @@ end
 \edef\pdfxformresources{\pdfvariable xformresources}
 \edef\pdfpkmode{\pdfvariable pkmode}
 
-% Address a change of number for some node creation
-\directlua{
-  saved_node_new = node.new
-  function node.new(a,b)
-    if a == 8 and b == 8 then
-      b = 16
-    end
-    return(saved_node_new(a,b))
-  end
-}
