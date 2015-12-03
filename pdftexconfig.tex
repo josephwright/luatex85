@@ -6,15 +6,18 @@
 
   % From LuaTeX v0.85 the marker primitive for PDF output is renamed:
   % use a single name.
-  \ifdefined\outputmode
+  \ifx\outputmode\undefined
+  \else
     \let\pdfoutput\outputmode
   \fi
   \global\pdfoutput = 1 %
 
-  \ifdefined\pdfpageheight
+  \ifx\pdfpageheight\undefined
+  \else
     \let\pageheight\pdfpageheight
   \fi
-  \ifdefined\pdfpagewidth
+  \ifx\pdfpagewidth\undefined
+  \else
     \let\pagewidth\pdfpagewidth
   \fi
   \global\pageheight = 297 true mm %
@@ -25,10 +28,10 @@
   \catcode`\{=1 %
   \catcode`\}=2 %
   \catcode`\#=6 %
-  \ifdefined\pdfvariable
-    \def\pdfsetvar{\global\pdfvariable}
-  \else
+  \ifx\pdfvariable\undefined
     \def\pdfsetvar#1 ={\expandafter\global\csname pdf#1\endcsname=}
+  \else
+    \def\pdfsetvar{\global\pdfvariable}
   \fi
   \pdfsetvar compresslevel = 9 %
   \pdfsetvar decimaldigits = 3 %
