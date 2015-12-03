@@ -26,9 +26,9 @@
   \catcode`\}=2 %
   \catcode`\#=6 %
   \ifdefined\pdfvariable
-    \protected\def\pdfsetvar{\global\pdfvariable}
+    \def\pdfsetvar{\global\pdfvariable}
   \else
-    \protected\def\pdfsetvar#1 ={\expandafter\global\csname pdf#1\endcsname=}
+    \def\pdfsetvar#1 ={\expandafter\global\csname pdf#1\endcsname=}
   \fi
   \pdfsetvar compresslevel = 9 %
   \pdfsetvar decimaldigits = 3 %
