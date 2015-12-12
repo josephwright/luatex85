@@ -16,7 +16,7 @@
 \let\pdftexversion\luatexversion
 \let\pdfpagewidth\pagewidth
 \let\pdfpageheight\pageheight
-\protected\def\pdfliteral{\pdfextension literal}
+
 \makeatletter
 \directlua{% from Heiko's pdftexcmds
 local function utf8_to_byte(str)
@@ -213,59 +213,57 @@ end
           \def\pdfcolorstackinit {\pdffeedback colorstackinit}
 
 
-\protected\def\pdfliteral{\pdfextension literal}
-\protected\def\pdfcolorstack{\pdfextension colorstack}
-\protected\def\pdfsetmatrix{\pdfextension setmatrix}
-\protected\def\pdfsave{\pdfextension save\relax}
-\protected\def\pdfrestore{\pdfextension restore\relax}
-\protected\def\pdfobj{\pdfextension obj }
-\protected\def\pdfrefobj{\pdfextension refobj }
-\protected\def\pdfannot{\pdfextension annot }
-\protected\def\pdfstartlink{\pdfextension startlink }
+\protected\def\pdfliteral        {\pdfextension literal}
+\protected\def\pdfcolorstack     {\pdfextension colorstack}
+\protected\def\pdfsetmatrix      {\pdfextension setmatrix}
+\protected\def\pdfsave           {\pdfextension save\relax}
+\protected\def\pdfrestore        {\pdfextension restore\relax}
+\protected\def\pdfobj            {\pdfextension obj }
+\protected\def\pdfrefobj         {\pdfextension refobj }
+\protected\def\pdfannot          {\pdfextension annot }
+\protected\def\pdfstartlink      {\pdfextension startlink }
+\protected\def\pdfendlink        {\pdfextension endlink\relax}
+\protected\def\pdfoutline        {\pdfextension outline }
+\protected\def\pdfdest           {\pdfextension dest }
+\protected\def\pdfthread         {\pdfextension thread }
+\protected\def\pdfstartthread    {\pdfextension startthread }
+\protected\def\pdfendthread      {\pdfextension endthread\relax}
+\protected\def\pdfinfo           {\pdfextension info }
+\protected\def\pdfcatalog        {\pdfextension catalog }
+\protected\def\pdfnames          {\pdfextension names }
+\protected\def\pdfincludechars   {\pdfextension includechars }
+\protected\def\pdffontattr       {\pdfextension fontattr }
+\protected\def\pdfmapfile        {\pdfextension mapfile }
+\protected\def\pdfmapline        {\pdfextension mapline }
+\protected\def\pdftrailer        {\pdfextension trailer }
+\protected\def\pdfglyphtounicode {\pdfextension glyphtounicode }
 
-
-\protected\def\pdfendlink{\pdfextension endlink\relax}
-\protected\def\pdfoutline{\pdfextension outline }
-\protected\def\pdfdest{\pdfextension dest }
-\protected\def\pdfthread{\pdfextension thread }
-\protected\def\pdfstartthread{\pdfextension startthread }
-\protected\def\pdfendthread{\pdfextension endthread\relax}
-\protected\def\pdfinfo{\pdfextension info }
-\protected\def\pdfcatalog{\pdfextension catalog }
-\protected\def\pdfnames{\pdfextension names }
-\protected\def\pdfincludechars  {\pdfextension includechars }
-\protected\def\pdffontattr{\pdfextension fontattr }
-\protected\def\pdfmapfile{\pdfextension mapfile }
-\protected\def\pdfmapline{\pdfextension mapline }
-\protected\def\pdftrailer{\pdfextension trailer }
-\protected\def\pdfglyphtounicode{\pdfextension glyphtounicode }
-
-\edef\pdfcompresslevel{\pdfvariable compresslevel}
-\edef\pdfobjcompresslevel{\pdfvariable objcompresslevel}
-\edef\pdfdecimaldigits{\pdfvariable decimaldigits}
-\edef\pdfgamma{\pdfvariable gamma}
-\edef\pdfimageresolution{\pdfvariable imageresolution}
-\edef\pdfimageapplygamma{\pdfvariable imageapplygamma}
-\edef\pdfimagegamma{\pdfvariable imagegamma}
-\edef\pdfimagehicolor{\pdfvariable imagehicolor}
-\edef\pdfimageaddfilename{\pdfvariable imageaddfilename}
-\edef\pdfpkresolution{\pdfvariable pkresolution}
-\edef\pdfinclusioncopyfonts{\pdfvariable inclusioncopyfonts}
-\edef\pdfinclusionerrorlevel{\pdfvariable inclusionerrorlevel}
-\edef\pdfreplacefont{\pdfvariable replacefont}
-\edef\pdfgentounicode{\pdfvariable gentounicode}
-\edef\pdfpagebox{\pdfvariable pagebox}
-\edef\pdfminorversion{\pdfvariable minorversion}
-\edef\pdfuniqueresname{\pdfvariable uniqueresname}
-\edef\pdfhorigin{\pdfvariable horigin}
-\edef\pdfvorigin{\pdfvariable vorigin}
-\edef\pdflinkmargin{\pdfvariable linkmargin}
-\edef\pdfdestmargin{\pdfvariable destmargin}
-\edef\pdfthreadmargin{\pdfvariable threadmargin}
-\edef\pdfpagesattr{\pdfvariable pagesattr}
-\edef\pdfpageattr{\pdfvariable pageattr}
-\edef\pdfpageresources{\pdfvariable pageresources}
-\edef\pdfxformattr{\pdfvariable xformattr}
-\edef\pdfxformresources{\pdfvariable xformresources}
-\edef\pdfpkmode{\pdfvariable pkmode}
+\protected\edef\pdfcompresslevel       {\pdfvariable compresslevel}
+\protected\edef\pdfobjcompresslevel    {\pdfvariable objcompresslevel}
+\protected\edef\pdfdecimaldigits       {\pdfvariable decimaldigits}
+\protected\edef\pdfgamma               {\pdfvariable gamma}
+\protected\edef\pdfimageresolution     {\pdfvariable imageresolution}
+\protected\edef\pdfimageapplygamma     {\pdfvariable imageapplygamma}
+\protected\edef\pdfimagegamma          {\pdfvariable imagegamma}
+\protected\edef\pdfimagehicolor        {\pdfvariable imagehicolor}
+\protected\edef\pdfimageaddfilename    {\pdfvariable imageaddfilename}
+\protected\edef\pdfpkresolution        {\pdfvariable pkresolution}
+\protected\edef\pdfinclusioncopyfonts  {\pdfvariable inclusioncopyfonts}
+\protected\edef\pdfinclusionerrorlevel {\pdfvariable inclusionerrorlevel}
+\protected\edef\pdfreplacefont         {\pdfvariable replacefont}
+\protected\edef\pdfgentounicode        {\pdfvariable gentounicode}
+\protected\edef\pdfpagebox             {\pdfvariable pagebox}
+\protected\edef\pdfminorversion        {\pdfvariable minorversion}
+\protected\edef\pdfuniqueresname       {\pdfvariable uniqueresname}
+\protected\edef\pdfhorigin             {\pdfvariable horigin}
+\protected\edef\pdfvorigin             {\pdfvariable vorigin}
+\protected\edef\pdflinkmargin          {\pdfvariable linkmargin}
+\protected\edef\pdfdestmargin          {\pdfvariable destmargin}
+\protected\edef\pdfthreadmargin        {\pdfvariable threadmargin}
+\protected\edef\pdfpagesattr           {\pdfvariable pagesattr}
+\protected\edef\pdfpageattr            {\pdfvariable pageattr}
+\protected\edef\pdfpageresources       {\pdfvariable pageresources}
+\protected\edef\pdfxformattr           {\pdfvariable xformattr}
+\protected\edef\pdfxformresources      {\pdfvariable xformresources}
+\protected\edef\pdfpkmode              {\pdfvariable pkmode}
 
