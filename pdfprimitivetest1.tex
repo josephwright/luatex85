@@ -1,0 +1,102 @@
+\RequirePackage{luatex85}
+\documentclass{article}
+
+
+\ifx\directlua\undefined
+
+\protected\def\pdfimageaddfilename{?}
+\protected\def\pdfreplacefont{?}
+\protected\def\pdfxformattr{?}% \pdfxform?
+\protected\def\pdfxformresources{?}
+
+\fi
+
+
+\message{[\the\pdftexversion]}
+\message{[\pdfcreationdate]}
+\protected\edef\x{(\pdftexversion)(\pdfcreationdate)}
+\message{\meaning\x}
+
+% pdffeedback
+\edef\z{!
+\pdftexversion!
+\pdftexrevision!
+\pdflastlink!
+\pdfretval!
+\pdflastobj!
+\pdflastannot!
+%\pdfxformname 0!
+\pdfcreationdate!
+\pdffontname \font!
+\pdffontobjnum \font!
+\pdffontsize \font!
+\pdfpageref  1!
+\pdfcolorstackinit {}!
+}
+\message{\meaning\z}
+
+
+
+% pdffeedback
+\edef\z{!
+\pdfliteral!
+\pdfcolorstack!
+\pdfsetmatrix!
+\pdfsave!
+\pdfrestore!
+\pdfobj!
+\pdfrefobj!
+\pdfannot!
+\pdfstartlink!
+\pdfendlink!
+\pdfoutline!
+\pdfdest!
+\pdfthread!
+\pdfstartthread!
+\pdfendthread!
+\pdfinfo!
+\pdfcatalog!
+\pdfnames!
+\pdfincludechars  !
+\pdffontattr!
+\pdfmapfile!
+\pdfmapline!
+\pdftrailer!
+\pdfglyphtounicode!
+}
+\message{\meaning\z}
+\show\pdfpkmode
+\edef\z{!
+\pdfcompresslevel!
+\pdfobjcompresslevel!
+\pdfdecimaldigits!
+\pdfgamma!
+\pdfimageresolution!
+\pdfimageapplygamma!
+\pdfimagegamma!
+\pdfimagehicolor!
+\pdfimageaddfilename!
+\pdfpkresolution!
+\pdfinclusioncopyfonts!
+\pdfinclusionerrorlevel!
+\pdfreplacefont!
+\pdfgentounicode!
+\pdfpagebox!
+\pdfminorversion!
+\pdfuniqueresname!
+\pdfhorigin!
+\pdfvorigin!
+\pdflinkmargin!
+\pdfdestmargin!
+\pdfthreadmargin!
+\pdfpagesattr!
+\pdfpageattr!
+\pdfpageresources!
+\pdfxformattr!
+\pdfxformresources!
+\pdfpkmode!
+}
+
+\message{\meaning\z}
+
+\stop
