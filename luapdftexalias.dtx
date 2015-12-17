@@ -153,11 +153,24 @@
 \protected\edef\pdfimageapplygamma     {\pdfvariable imageapplygamma}
 \protected\edef\pdfimagegamma          {\pdfvariable imagegamma}
 \protected\edef\pdfimagehicolor        {\pdfvariable imagehicolor}
+%    \end{macrocode}
+% Note that |\pdfimageaddfilename| was never actually in PDF\TeX,
+% But is included here so that all the |\pdfvariable| cases are covered.
+%    \begin{macrocode}
 \protected\edef\pdfimageaddfilename    {\pdfvariable imageaddfilename}
+%    \end{macrocode}
+%    \begin{macrocode}
 \protected\edef\pdfpkresolution        {\pdfvariable pkresolution}
 \protected\edef\pdfinclusioncopyfonts  {\pdfvariable inclusioncopyfonts}
 \protected\edef\pdfinclusionerrorlevel {\pdfvariable inclusionerrorlevel}
-\protected\edef\pdfreplacefont         {\pdfvariable replacefont}
+%    \end{macrocode}
+% Note that |\pdfreplacefont| was never actually in public releases of
+% PDF\TeX, It was in Lua\TeX0.85, but discussion on luatex list
+% lead to it being removed in 0.87
+%    \begin{macrocode}
+%\protected\edef\pdfreplacefont         {\pdfvariable replacefont}
+%    \end{macrocode}
+%    \begin{macrocode}
 \protected\edef\pdfgentounicode        {\pdfvariable gentounicode}
 \protected\edef\pdfpagebox             {\pdfvariable pagebox}
 \protected\edef\pdfminorversion        {\pdfvariable minorversion}
@@ -170,27 +183,17 @@
 \protected\edef\pdfpagesattr           {\pdfvariable pagesattr}
 \protected\edef\pdfpageattr            {\pdfvariable pageattr}
 \protected\edef\pdfpageresources       {\pdfvariable pageresources}
+%    \end{macrocode}
+% Note that |\pdfxformattr| and |\pdfxformresources| were never
+% actually in PDF\TeX, But are included here so that all the
+% |\pdfvariable| cases are covered.
+%    \begin{macrocode}
 \protected\edef\pdfxformattr           {\pdfvariable xformattr}
 \protected\edef\pdfxformresources      {\pdfvariable xformresources}
+%    \end{macrocode}
+%    \begin{macrocode}
 \protected\edef\pdfpkmode              {\pdfvariable pkmode}
 %    \end{macrocode}
-%
-%    \begin{macrocode}
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-%    \end{macrocode}
-%
-%
 %
 %    \begin{macrocode}
 %</package>
