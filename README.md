@@ -6,10 +6,11 @@ These files require knowledge of both the concept of a local TeX
 tree and format-building. They are recommended for *experienced*
 users only.
 
-The files `ltluatex.lua`, `luatex85.sty`, `dvilualatex.ini` and
-`lualatex.ini` should be placed in your local `tex/latex` tree,
-while the file `pdftexconfig.tex` should be in your local
-`tex/generic` tree. Once these are installed
+The files `ltluatex.lua` and  `luatex85.sty` should be placed in
+your local `tex/latex` tree.
+You will also need the various bits and pieces from
+https://github.com/josephwright/tex-ini-files, and once those
+are installed running
 
     fmtutil-sys -byengine luatex
 
