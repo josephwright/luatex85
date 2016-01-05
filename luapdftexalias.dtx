@@ -26,16 +26,76 @@
 %</driver>
 % \fi
 %
+% \hfuzz0.6pt
+%
 % \GetFileInfo{luapdftexalias.dtx}
 %
 % \title{The \textsf{luapdftexalias} Package\thanks{This file
 %        has version number \fileversion, last
 %        revised \filedate.
-% Please report any issues at https://github.com/davidcarlisle/dpctex/issues}}
+% Please report any issues at https://github.com/josephwright/luatex85/issues}}
 % \author{LaTeX3 project}
 % \maketitle
 %
 % \section{Introduction}
+%
+% Lua\TeX\ 0.85 and 0.87 contain many changes from Lua\TeX~0.80 as contained in \TeX{}Live 2014.
+% Most notably almost all the pdf\TeX\ extended primitves with names
+% \verb|\pdf...| have been renamed or removed. Lua\TeX\ is aiming for
+% a cleaner separation of the ``back end'' PDF generation (that
+% corresponds to the work of a dvi driver with classical \TeX.
+% 
+% There are many other changes and bug fixes in the Lua\TeX\ sources,
+% however this package is just concerned with compatibility for
+% documents or packages using the pdf\TeX\ primitives.
+%
+% The changes are of several types:
+%
+% A few commands have been removed,
+% as the facilities are achievable in lua (mostly these had already
+% been removed in earlier release).
+%
+% Some commands have been ``adopted'' as Lua\TeX\ primitives and so
+% lose their `verb|\pdf|` prefix (and in some cases are renamed)
+% so \verb|pdfsavepos| becomes \verb|savepos|, but \verb|\pdfoutput|
+% becomes \verb|outputmode|.
+%
+% The majority of the ``back end'' commands have been removed and
+% replaced by calls to one of three new primitives,
+% \verb|\pdffeedback|, \verb|\pdfextension| and \verb|\pdfvariable|
+% These take keywords so for example \verb|\pdfliteral| becomes
+% \verb|\pdfextension literal|.
+%
+% The Lua\TeX\ manual lists suitable compatibility definitions
+% that may be made so that documents can continue to use the old
+% names. Mostly this package just consists of those definitions, with
+% minor changes in some cases. (Mostly different choices over the use
+% of \verb|\protected| or \verb|\edef|.)
+%
+% In general it is recommended that any package is updated to use the
+% new primitive Lua\TeX\ syntax when used with Lua\TeX, but until
+% packages are updated authors may find that adding\\%
+% \verb|\RequirePackage{luapdftexalias}|\\
+% as the first line of their
+% document helps with the use of older packages with the new LuaTeX.
+%
+% As noted above there are other changes in Lua\TeX, notably the
+% removal of the |\verb\write18| syntax for accessing system commands,
+% a small companion package is distributed with this package. Rather
+% than load this package directly you may prefer\\
+% \verb|\RequirePackage{luatex85}|\\
+% This loads this package, the textsf{shellesc} package which emulates
+% \verb|\write18| and includes any other smaller compatibility
+% workarounds as required.
+%
+% Note that if packages are found that require \textsf{luatex85}
+% you may want to contact the authors asking that the packages 
+% be updated to current Lua\TeX\ syntax. The \textsf{luatex85}
+% should be seen as a temporary aid to improve compatibility during
+% the transition towards Lua\TeX~1.0 it is not intended that future
+% documents should always have to load this compatibility emulation.
+%
+% The package is designed to also be usable with plain Lua\TeX.
 %
 % 
 % \section{Implementation}
