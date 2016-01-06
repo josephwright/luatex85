@@ -17,7 +17,13 @@ computer
 \setmainlanguage{english}\setotherlanguages{french,tibetan}
 \newfontfamily\tibetanfont{Microsoft Himalaya}% or any other suitable font
 \usepackage{spelling}
-\usepackage{chickenize}\boustrophedon
+\usepackage{chickenize}
+
+% oops:-)
+\def\unuppercasecolor{
+  \directlua{luatexbase.remove_from_callback("post_linebreak_filter","uppercasecolor")}}
+
+
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Pagella}
 
@@ -25,6 +31,8 @@ computer
 \begin{document}
 
 % `Start of the TeXBook
+\boustrophedon
+
 \noindent
 {\sc Gentle} {\sc Reader}: \strut This is a handbook about
 \TeX, a new typesetting system intended for the creation
@@ -57,6 +65,7 @@ Some random text in random colours.
 Some Text with Mixed Case LaTeX Input.
 
 \unuppercasecolor
+
 
 \paragraph{French} should get extra space:
 
