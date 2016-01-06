@@ -26,6 +26,7 @@ local nodeslide = node.slide
 Hhead = nodeid("hhead")
 RULE  = nodeid("rule")
 GLUE  = nodeid("glue")
+PENALTY  = nodeid("penalty")
 WHAT  = nodeid("whatsit")
 COL   = node.subtype("pdf_colorstack")
 PDF_LITERAL = node.subtype("pdf_literal")
@@ -613,7 +614,9 @@ substitutewords = function(head)
   end
   return head
 end
-suppressonecharbreakpenaltynode = node.new(12)
+-- 12 was penalty
+-- 12 is glue in 0.87 (penalty is 14 but use PENALTY
+suppressonecharbreakpenaltynode = node.new(PENALTY)
 suppressonecharbreakpenaltynode.penalty = 10000
 function suppressonecharbreak(head)
   for i in node.traverse_id(10,head) do
