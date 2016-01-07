@@ -43,7 +43,7 @@
 % Most notably almost all the pdf\TeX\ extended primitves with names
 % \verb|\pdf...| have been renamed or removed. Lua\TeX\ is aiming for
 % a cleaner separation of the ``back end'' PDF generation (that
-% corresponds to the work of a dvi driver with classical \TeX.
+% corresponds to the work of a dvi driver with classical \TeX).
 % 
 % There are many other changes and bug fixes in the Lua\TeX\ sources,
 % however this package is just concerned with compatibility for
@@ -52,13 +52,13 @@
 % The changes are of several types:
 %
 % A few commands have been removed,
-% as the facilities are achievable in lua (mostly these had already
+% as the facilities are achievable in Lua (mostly these had already
 % been removed in earlier release).
 %
 % Some commands have been ``adopted'' as Lua\TeX\ primitives and so
-% lose their `verb|\pdf|` prefix (and in some cases are renamed)
-% so \verb|pdfsavepos| becomes \verb|savepos|, but \verb|\pdfoutput|
-% becomes \verb|outputmode|.
+% lose their \verb|\pdf| prefix (and in some cases are renamed)
+% so \verb|\pdfsavepos| becomes \verb|\savepos|, but \verb|\pdfoutput|
+% becomes \verb|\outputmode|.
 %
 % The majority of the ``back end'' commands have been removed and
 % replaced by calls to one of three new primitives,
@@ -72,25 +72,25 @@
 % minor changes in some cases. (Mostly different choices over the use
 % of \verb|\protected| or \verb|\edef|.)
 %
-% In general it is recommended that any package is updated to use the
+% In general it is recommended that packages are updated to use the
 % new primitive Lua\TeX\ syntax when used with Lua\TeX, but until
 % packages are updated authors may find that adding\\%
 % \verb|\RequirePackage{luapdftexalias}|\\
 % as the first line of their
-% document helps with the use of older packages with the new LuaTeX.
+% document helps with the use of older packages with the new Lua\TeX.
 %
-% As noted above there are other changes in Lua\TeX, notably the
+% As noted above, there are other changes in Lua\TeX, notably the
 % removal of the |\verb\write18| syntax for accessing system commands,
 % a small companion package is distributed with this package. Rather
 % than load this package directly you may prefer\\
 % \verb|\RequirePackage{luatex85}|\\
-% This loads this package, the textsf{shellesc} package which emulates
-% \verb|\write18| and includes any other smaller compatibility
-% workarounds as required.
+% This loads this package and the \textsf{shellesc} package which emulates
+% \verb|\write18|. \textsf{luatex85} may also include any other
+% smaller compatibility workarounds as required.
 %
 % Note that if packages are found that require \textsf{luatex85}
 % you may want to contact the authors asking that the packages 
-% be updated to current Lua\TeX\ syntax. The \textsf{luatex85}
+% be updated to current Lua\TeX\ syntax. The \textsf{luatex85} package
 % should be seen as a temporary aid to improve compatibility during
 % the transition towards Lua\TeX~1.0 it is not intended that future
 % documents should always have to load this compatibility emulation.
