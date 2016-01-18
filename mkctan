@@ -12,7 +12,7 @@ cat > luatex85/README <<ENDREADME
 Compatibility packages for luatex 0.85+
 
 luapdftexalias: emulate pdftex primitives
-luatex85: include luapdflaias and shellesc
+luatex85: include luapdftexalias and shellesc
 
 LaTeX3 Project
 https://github.com/josephwright/luatex85/issues
