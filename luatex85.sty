@@ -1,7 +1,14 @@
+% Quit if not luatex
+\ifx\directlua\undefined
+  \expandafter\endinput
+\fi
+
 \ifx\RequirePackage\undefined
-\input shellesc.sty
-\input luapdftexalias
+% Plain TeX
+  \input shellesc.sty
+  \input luapdftexalias.sty
 \else
-\RequirePackage{shellesc}
-\RequirePackage{luapdftexalias}
+% LaTeX
+  \RequirePackage{shellesc}
+  \RequirePackage{luapdftexalias}
 \fi
