@@ -1,0 +1,87 @@
+% \iffalse
+%% Source File: luatex85.dtx
+%% Copyright 2015-2016 LaTeX3 project
+%%
+%% This file may be distributed under the terms of the LPPL.
+%% See README for details.
+%
+%<*dtx>
+          \ProvidesFile{luatex85.dtx}
+%</dtx>
+%<package>\ifx\ProvidesPackage\undefined
+%<package>\def\next#1#2[#3]{\wlog{#2 #3}}
+%<package>\expandafter\next\fi
+%<package>\ProvidesPackage{luatex85}
+%<driver> \ProvidesFile{luatex85.drv}
+% \fi
+%         \ProvidesFile{luatex85.dtx}
+       [2015/12/05 v0.01 aliases for luatex 0.85+]
+%
+% \iffalse
+%<*driver>
+\documentclass{ltxdoc}
+\begin{document}
+\DocInput{luatex85.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \hfuzz0.6pt
+%
+% \GetFileInfo{luatex85.dtx}
+%
+% \title{The \textsf{luatex85} Package\thanks{This file
+%        has version number \fileversion, last
+%        revised \filedate.
+% Please report any issues at https://github.com/josephwright/luatex85/issues}}
+% \author{LaTeX3 project}
+% \date{\filedate}
+% \maketitle
+%
+%
+% Lua\TeX\ 0.85--0.87 contain many changes from Lua\TeX~0.80 as contained in \TeX{}Live 2014.
+% The separate packages \textsf{shellesc} and \textsf{luapdfalias} address most of
+% the compatibility issues. This small package just includes both of these packages
+% and then may include any other temporary workarounds as the need for them is discovered.
+%
+% Note that this package should usually be used as the first line of the document
+% \begin{verbatim}
+% \RequirePackage{luatex85}
+% \documentclass{article}
+% ....
+% \end{verbatim}
+%
+% It should be seen as a \emph{temporary measure} to address
+% compatibility issues in beta versions of Lua\TeX. If you find that
+% the package is needed on some document then that is an indication
+% that one or more packages used by the document need to be updated to
+% current Lua\TeX\ conventions.
+%
+% If the document requires shell escape facility it (or the packages
+% it loads) should be updated to use \textsf{shellesc}  which provides
+% a consistent interface to system commands across different \TeX\
+% engines. Otherwise, if shell escape is not needed, then this
+% package, and \textsf{luapdfalias} package should not be needed once
+% packages have been updated.
+%
+%    \begin{macrocode}
+%<*package>
+% Quit if not luatex
+\ifx\directlua\undefined
+  \expandafter\endinput
+\fi
+
+\ifx\RequirePackage\undefined
+% Plain TeX
+  \input shellesc.sty
+  \input luapdftexalias.sty
+\else
+% LaTeX
+  \RequirePackage{shellesc}
+  \RequirePackage{luapdftexalias}
+\fi
+%</package>
+%    \end{macrocode}
+%
+% \Finale
+%

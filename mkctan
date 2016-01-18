@@ -1,0 +1,22 @@
+tex luatex85.ins
+pdflatex luatex85.dtx
+pdflatex luatex85.dtx
+
+tex luapdftexalias.ins
+pdflatex luapdftexalias.dtx
+pdflatex luapdftexalias.dtx
+
+cd ..
+rm -f luatex85.zip
+cat > luatex85/README <<ENDREADME
+Compatibility packages for luatex 0.85+
+
+luapdftexalias: emulate pdftex primitives
+luatex85: include luapdflaias and shellesc
+
+LaTeX3 Project
+https://github.com/josephwright/luatex85/issues
+
+ENDREADME
+
+zip luatex85.zip luatex85/README luatex85/{luatex85,luapdftexalias}.{dtx,ins,pdf}

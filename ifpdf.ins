@@ -1,0 +1,33 @@
+\input docstrip
+
+\askforoverwritefalse
+
+
+\preamble
+This version of ifpdf has had minimal updates so that
+it works in luatex versions from 0.85 onwards.
+
+Modified sections are marked
+luatex 0.85 check
+end luatex 0.85 check
+
+Apart from these changes the source is the code
+as Heiko Oberdiek's original version.
+That original version may be obtained from:
+
+https://www.ctan.org/pkg/ifpdf
+
+Bug reports about this modified version should be
+reported at
+
+https://github.com/josephwright/luatex85/issues
+
+This patched version meets the conditions of the LPPL licence
+under which the original was distributed. It is hopefully
+a temporary patch until the original can be updated to work
+with current engines.
+
+\endpreamble
+\generate{\file{ifpdf.sty}{\from{ifpdf.dtx}{package}}}
+
+\endbatchfile
