@@ -9,14 +9,11 @@ module = "luatex85"
 -- Ignore ifpdf stuff
 sourcefiles =
   {
-    "luapdftexalias.dtx",
-    "luapdftexalias.ins",
     "luatex85.dtx",
     "luatex85.ins"
   }
 typesetfiles =
   {
-    "luapdftexalias.dtx",
     "luatex85.dtx",
   }
 
