@@ -16,9 +16,19 @@ typesetfiles =
   {
     "luatex85.dtx",
   }
+versionfiles = typesetfiles
 
 -- No automated tests for this bundle
 testfildir = ""
+
+function setversion_update_line (line, date, version)
+  local date = string.gsub(date, "%-", "/")
+  if string.match(line, "^ *%[%d%d%d%d/%d%d/%d%d") then
+    line = string.gsub(line, "%d%d%d%d/%d%d/%d%d", date)
+    line = string.gsub(line, "v%d%.%d+%w?", "v" .. version)
+  end
+  return line
+end
 
 -- Find and run the build system
 kpse.set_program_name ("kpsewhich")
