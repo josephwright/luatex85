@@ -9,13 +9,14 @@
           \ProvidesFile{luatex85.dtx}
 %</dtx>
 %<package>\ifx\ProvidesPackage\undefined
-%<package>\def\next#1#2[#3]{\wlog{#2 #3}}
+%<package>\def\next#1#2[#3]{\wlog{#2 #3}\expandafter\gdef
+%<package>\csname ver@luatex85.sty\endcsname{#3}}
 %<package>\expandafter\next\fi
 %<package>\ProvidesPackage{luatex85}
 %<driver> \ProvidesFile{luatex85.drv}
 % \fi
 %         \ProvidesFile{luatex85.dtx}
-       [2015/12/05 v0.01 pdftex aliases for luatex]
+       [2016/05/17 v0.02 pdftex aliases for luatex]
 %
 % \iffalse
 %<*driver>
