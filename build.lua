@@ -17,6 +17,8 @@ typesetfiles =
     "luatex85.dtx",
   }
 
+tdsroot = "generic"
+
 -- No automated tests for this bundle
 testfildir = ""
 
