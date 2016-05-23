@@ -145,6 +145,10 @@
 \let\ifpdfabsnum         \ifabsnum
 \let\ifpdfabsdim         \ifabsdim
 %    \end{macrocode}
+% Use |\enableprimitives| here in case of conflict with tracefnt.
+%    \begin{macrocode}
+\directlua{tex.enableprimitives('pdf',{'tracingfonts'})}
+%    \end{macrocode}
 %
 % \subsection{Commands converted to constants}
 % The |\pdffeedback| version is not defined in dvi mode and (currently) is
