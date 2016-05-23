@@ -16,7 +16,7 @@
 %<driver> \ProvidesFile{luatex85.drv}
 % \fi
 %         \ProvidesFile{luatex85.dtx}
-       [2016/05/17 v1.1 pdftex aliases for luatex]
+       [2016/05/23 v1.2 pdftex aliases for luatex]
 %
 % \iffalse
 %<*driver>
@@ -146,13 +146,21 @@
 \let\ifpdfabsdim         \ifabsdim
 %    \end{macrocode}
 %
+% \subsection{Commands converted to constants}
+% The |\pdffeedback| version is not defined in dvi mode and (currently) is
+% curiously defined to be 40 in pdf mode, so define these as constant values.
+%    \begin{macrocode}
+\protected\def\pdftexversion     {\numexpr 140\relax}
+          \def\pdftexrevision    {7}
+%\protected\def\pdftexversion     {\numexpr\pdffeedback version\relax}
+%          \def\pdftexrevision    {\pdffeedback revision}
+%    \end{macrocode}
+%
 % \subsection{Commands converted to \cs{pdffeedback}}
 % Expandable commands use a sipmple |\def| internal registers that
 % were accessed via |\the| in PDF\TeX\ use a |\protected| definition 
 % using |\numexpr| terminated by an explicit |\relax|.
 %    \begin{macrocode}
-\protected\def\pdftexversion     {\numexpr\pdffeedback version\relax}
-          \def\pdftexrevision    {\pdffeedback revision}
 \protected\def\pdflastlink       {\numexpr\pdffeedback lastlink\relax}
 \protected\def\pdfretval         {\numexpr\pdffeedback retval\relax}
 \protected\def\pdflastobj        {\numexpr\pdffeedback lastobj\relax}
