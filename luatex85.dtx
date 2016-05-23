@@ -157,7 +157,7 @@
 %    \end{macrocode}
 %
 % \subsection{Commands converted to \cs{pdffeedback}}
-% Expandable commands use a sipmple |\def| internal registers that
+% Expandable commands use a simple |\def|. Internal registers that
 % were accessed via |\the| in PDF\TeX\ use a |\protected| definition 
 % using |\numexpr| terminated by an explicit |\relax|.
 %    \begin{macrocode}
@@ -175,8 +175,8 @@
 %    \end{macrocode}
 %
 % \subsection{Commands converted to calls to \cs{pdfextension}}
-% These use a |\protected| definition. Comands that take no following
-% argument are currently terminated by |\releax| as suggested in the
+% These use a |\protected| definition. Commands that take no following
+% argument are currently terminated by |\relax| as suggested in the
 % Lua\TeX\ manual, although it would be appear to be sufficient to
 % consistently terminate these commands with a space.
 %    \begin{macrocode}
@@ -232,7 +232,7 @@
 \protected\edef\pdfinclusioncopyfonts  {\pdfvariable inclusioncopyfonts}
 \protected\edef\pdfinclusionerrorlevel {\pdfvariable inclusionerrorlevel}
 %    \end{macrocode}
-% Note that |\pdfreplacefont| was never actually in public releases of
+% Note that |\pdfreplacefont| was never in public releases of
 % PDF\TeX, It was in Lua\TeX0.85, but discussion on luatex list
 % lead to it being removed in 0.87
 %    \begin{macrocode}
@@ -253,7 +253,7 @@
 \protected\edef\pdfpageresources       {\pdfvariable pageresources}
 %    \end{macrocode}
 % Note that |\pdfxformattr| and |\pdfxformresources| were never
-% actually in PDF\TeX, But are included here so that all the
+% in PDF\TeX, But are included here so that all the
 % |\pdfvariable| cases are covered.
 %    \begin{macrocode}
 \protected\edef\pdfxformattr           {\pdfvariable xformattr}
