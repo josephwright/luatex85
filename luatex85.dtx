@@ -16,7 +16,7 @@
 %<driver> \ProvidesFile{luatex85.drv}
 % \fi
 %         \ProvidesFile{luatex85.dtx}
-       [2016/06/13 v1.3 pdftex aliases for luatex]
+       [2016/06/15 v1.4 pdftex aliases for luatex]
 %
 % \iffalse
 %<*driver>
@@ -170,7 +170,8 @@
 \protected\def\pdflastobj        {\numexpr\pdffeedback lastobj\relax}
 \protected\def\pdflastannot      {\numexpr\pdffeedback lastannot\relax}
           \def\pdfxformname      {\pdffeedback xformname}
-         \edef\pdfcreationdate   {\pdffeedback creationdate}
+\ifnum\outputmode>0 \expandafter\edef\else\expandafter\def\fi
+              \pdfcreationdate   {\pdffeedback creationdate}
           \def\pdffontname       {\pdffeedback fontname}
           \def\pdffontobjnum     {\pdffeedback fontobjnum}
           \def\pdffontsize       {\pdffeedback fontsize}
