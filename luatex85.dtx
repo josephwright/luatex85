@@ -170,8 +170,9 @@
 \protected\def\pdflastobj        {\numexpr\pdffeedback lastobj\relax}
 \protected\def\pdflastannot      {\numexpr\pdffeedback lastannot\relax}
           \def\pdfxformname      {\pdffeedback xformname}
-\ifnum\outputmode>0 \expandafter\edef\else\expandafter\def\fi
-              \pdfcreationdate   {\pdffeedback creationdate}
+{\outputmode=1
+         \xdef\pdfcreationdate{\pdffeedback creationdate}
+}
           \def\pdffontname       {\pdffeedback fontname}
           \def\pdffontobjnum     {\pdffeedback fontobjnum}
           \def\pdffontsize       {\pdffeedback fontsize}
